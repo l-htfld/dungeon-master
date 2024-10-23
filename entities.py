@@ -71,7 +71,7 @@ class Bullet():
         super().__init__()
         self.x = x
         self.y = y
-        self.speed = 8
+        self.speed = 8	
         self.direction = direction
         print ('bullet initialized')
 

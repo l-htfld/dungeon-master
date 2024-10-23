@@ -7,7 +7,7 @@ from entities import Hero, EnemyMelee, EnemyArcher
 class Gameplay:
 
     def __init__ (self):
-        self.FPS = 60
+        self.FPS = 24
         self.FramePerSec = pygame.time.Clock()
 
         # Настройки экрана
@@ -93,23 +93,25 @@ if __name__ == '__main__':
 
     while True:
 
-            for event in pygame.event.get():
-                    dungeon.tileBackground (dungeon.brick)
-                    #dungeon.displaysurf.fill(dungeon.WHITE)
+        dungeon.tileBackground (dungeon.brick)
+        #dungeon.displaysurf.fill(dungeon.WHITE)
+        for event in pygame.event.get():
                     dungeon.moveCharacter ()
-                    enemy_melee_1.move_towards_player (hero)
-                    enemy_melee_2.move_towards_player (hero)
-                    archer_1.update ()
-                    archer_1.bullet.update (dungeon, hero)
-                    archer_2.update ()
-                    archer_2.bullet.update (dungeon, hero)
                     dungeon.quitGame ()
-                    dungeon.renderHero (dungeon.GREEN)
-                    dungeon.renderEnemy (dungeon.RED, enemy_melee_1)
-                    dungeon.renderEnemy (dungeon.RED, enemy_melee_2)
-                    dungeon.renderEnemy (dungeon.ORANGE, archer_1)
-                    dungeon.renderEnemy (dungeon.ORANGE, archer_2)
-                    dungeon.renderBullet (dungeon.WHITE, archer_1.bullet)
-                    dungeon.renderBullet (dungeon.WHITE, archer_2.bullet)
-                    pygame.display.flip()
-                    dungeon.FramePerSec.tick(dungeon.FPS)
+
+        enemy_melee_1.move_towards_player (hero)
+        enemy_melee_2.move_towards_player (hero)
+        archer_1.update ()
+        archer_1.bullet.update (dungeon, hero)
+        archer_2.update ()
+        archer_2.bullet.update (dungeon, hero)
+
+        dungeon.renderHero (dungeon.GREEN)
+        dungeon.renderEnemy (dungeon.RED, enemy_melee_1)
+        dungeon.renderEnemy (dungeon.RED, enemy_melee_2)
+        dungeon.renderEnemy (dungeon.ORANGE, archer_1)
+        dungeon.renderEnemy (dungeon.ORANGE, archer_2)
+        dungeon.renderBullet (dungeon.WHITE, archer_1.bullet)
+        dungeon.renderBullet (dungeon.WHITE, archer_2.bullet)
+        pygame.display.flip()
+        dungeon.FramePerSec.tick(dungeon.FPS)
