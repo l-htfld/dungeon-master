@@ -9,7 +9,7 @@ class Gameplay:
         self.FPS = 24
         self.FramePerSec = pygame.time.Clock()
 
-        # Настройки экрана
+        # Настройки экрана 123
         self.SCREEN_WIDTH = 1280
         self.SCREEN_HEIGHT = 720
         self.displaysurf = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
